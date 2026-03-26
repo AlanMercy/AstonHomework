@@ -4,14 +4,17 @@ import java.util.List;
 
 public class BookStreamProcessor {
 
-    public static void processAndPrint(List<Student> students) {
+    private static final int FILTER_YEAR_THRESHOLD = 2000;
+    private static final int LIMIT_BOOKS_COUNT = 3;
+
+    public void processAndPrint(List<Student> students) {
         students.stream().peek(System.out::println)
                 .map(Student::getBooks)
                 .flatMap(List::stream)
                 .sorted()
                 .distinct()
-                .filter(book -> book.getYear() > 2000)
-                .limit(3)
+                .filter(book -> book.getYear() > FILTER_YEAR_THRESHOLD)
+                .limit(LIMIT_BOOKS_COUNT)
                 .map(Book::getYear)
                 .findFirst()
                 .ifPresentOrElse(

@@ -8,7 +8,11 @@ public class Main {
 
     public static void main(String[] args) {
         Path filePath = Paths.get("students_books.txt");
-        List<Student> students = FileReaderService.loadStudentsFromFile(filePath);
-        BookStreamProcessor.processAndPrint(students);
+
+        FileReaderService fileReaderService = new FileReaderService();
+        BookStreamProcessor bookStreamProcessor = new BookStreamProcessor();
+
+        List<Student> students = fileReaderService.loadStudentsFromFile(filePath);
+        bookStreamProcessor.processAndPrint(students);
     }
 }
