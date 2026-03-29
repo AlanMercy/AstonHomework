@@ -6,6 +6,8 @@ public class DecoratorDemo {
         Animal aggressiveCat = new AggressiveAnimalDecorator(new Cat());
         Animal lazyAggressiveDog = new AggressiveAnimalDecorator(new LazyAnimalDecorator(new Dog()));
 
+        System.out.println("Паттерн Декоратор - пример работы");
+
         System.out.println("\nОбычный кот");
         cat.makeSound();
 
