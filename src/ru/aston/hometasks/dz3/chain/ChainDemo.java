@@ -1,7 +1,8 @@
 package ru.aston.hometasks.dz3.chain;
 
 public class ChainDemo {
-    public static void main(String[] args) {
+    public static void main() {
+        System.out.println("Паттерн Цепочка обязанностей - пример работы\n");
         FeederHandler catFeeder = new CatFeeder();
         FeederHandler dogFeeder = new DogFeeder();
         FeederHandler generalFeeder = new LastFeeder();
