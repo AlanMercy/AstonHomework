@@ -1,7 +1,7 @@
 package ru.aston.hometasks.dz3.strategy;
 
 public class StrategyDemo {
-    public static void main() {
+    public static void main(String[] args) {
         System.out.println("Паттерн Стратегия - пример работы\n");
 
         Animal dog = new Animal("Собака");

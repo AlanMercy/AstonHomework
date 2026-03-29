@@ -1,7 +1,7 @@
 package ru.aston.hometasks.dz3.proxy;
 
 public class ProxyDemo {
-    public static void main() {
+    public static void main(String[] args) {
         System.out.println("Паттерн Прокси - пример работы\n");
 
         String name = "Симба";

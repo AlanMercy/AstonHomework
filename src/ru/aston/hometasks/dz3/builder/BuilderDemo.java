@@ -1,7 +1,7 @@
 package ru.aston.hometasks.dz3.builder;
 
 public class BuilderDemo {
-    public static void main() {
+    public static void main(String[] args) {
         System.out.println("Паттерн Билдер - пример работы\n");
 
         Animal cat = new Animal.Builder("Мурка", "cat").build();
