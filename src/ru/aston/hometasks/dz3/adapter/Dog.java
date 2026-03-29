@@ -1,6 +1,6 @@
 package ru.aston.hometasks.dz3.adapter;
 
-public class Dog implements Animal{
+public class Dog implements Animal {
     private final String name;
 
     public Dog(String name) {
