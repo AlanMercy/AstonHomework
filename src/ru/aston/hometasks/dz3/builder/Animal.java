@@ -79,14 +79,14 @@ public class Animal {
         private final String name;
         private final String species;
 
-        private int age = 0;
-        private double height = 0.0;
-        private double weight = 0.0;
-        private String breed = "неизвестно";
-        private String color = "неизвестно";
-        private String favoriteFood = "неизвестно";
-        private String gender = "неизвестно";
-        private String temper = "неизвестно";
+        private int age;
+        private double height;
+        private double weight;
+        private String breed;
+        private String color;
+        private String favoriteFood;
+        private String gender;
+        private String temper;
 
         private Builder(String name, String species) {
             this.name = name;
