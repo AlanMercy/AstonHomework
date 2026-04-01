@@ -10,15 +10,15 @@ public class ChainDemo {
         catFeeder.setNext(dogFeeder);
         dogFeeder.setNext(generalFeeder);
 
-        Animal murka = new Animal("cat");
-        Animal sharik = new Animal("dog");
-        Animal lion = new Animal("lion");
+        Animal murka = new Animal(Species.CAT);
+        Animal sherif = new Animal(Species.DOG);
+        Animal lion = new Animal(Species.LION);
 
         System.out.println("Кормим кошку");
         catFeeder.handle(murka);
 
         System.out.println("\nКормим собаку");
-        catFeeder.handle(sharik);
+        catFeeder.handle(sherif);
 
         System.out.println("\nКормим льва");
         catFeeder.handle(lion);

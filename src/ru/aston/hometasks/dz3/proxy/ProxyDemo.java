@@ -23,7 +23,5 @@ public class ProxyDemo {
 
         System.out.println("\nПовторный доступ ветеринара (без повторной загрузки)");
         proxyForVet.displayInfo();
-
-
     }
 }

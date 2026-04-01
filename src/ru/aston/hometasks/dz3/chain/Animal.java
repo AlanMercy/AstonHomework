@@ -1,13 +1,13 @@
 package ru.aston.hometasks.dz3.chain;
 
 public class Animal {
-    private final String species;
+    private final Species species;
 
-    public Animal(String species) {
+    public Animal(Species species) {
         this.species = species;
     }
 
-    public String getSpecies() {
+    public Species getSpecies() {
         return species;
     }
 }

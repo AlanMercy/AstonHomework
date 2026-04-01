@@ -25,6 +25,10 @@ public class Animal {
         this.temper = builder.temper;
     }
 
+    public static Builder builder(String name, String species) {
+        return new Builder(name, species);
+    }
+
     public String getName() {
         return name;
     }
@@ -84,7 +88,7 @@ public class Animal {
         private String gender = "неизвестно";
         private String temper = "неизвестно";
 
-        public Builder(String name, String species) {
+        private Builder(String name, String species) {
             this.name = name;
             this.species = species;
         }
