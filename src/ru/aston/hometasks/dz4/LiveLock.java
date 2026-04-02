@@ -1,10 +1,8 @@
 package ru.aston.hometasks.dz4;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-
 public class LiveLock {
-    private static final AtomicBoolean FLAG1 = new AtomicBoolean(false);
-    private static final AtomicBoolean FLAG2 = new AtomicBoolean(false);
+    private static boolean FLAG1 = false;
+    private static boolean FLAG2 = false;
 
     private static final String MSG_WORK1 = "Рабочий 1: выполняю работу...";
     private static final String MSG_YIELD1 = "Рабочий 1: уступаю, жду...";
@@ -14,10 +12,10 @@ public class LiveLock {
     public static void main(String[] args) {
         Thread worker1 = new Thread(() -> {
             while (true) {
-                if (FLAG1.get() && !FLAG2.get()) {
+                if (FLAG1 && !FLAG2) {
                     System.out.println(MSG_WORK1);
-                    FLAG1.set(false);
-                    FLAG2.set(true);
+                    FLAG1 = false;
+                    FLAG2 = true;
                 } else {
                     System.out.println(MSG_YIELD1);
                     Thread.yield();
@@ -27,10 +25,10 @@ public class LiveLock {
 
         Thread worker2 = new Thread(() -> {
             while (true) {
-                if (FLAG2.get() && !FLAG1.get()) {
+                if (FLAG2 && !FLAG1) {
                     System.out.println(MSG_WORK2);
-                    FLAG2.set(false);
-                    FLAG1.set(true);
+                    FLAG2 = false;
+                    FLAG1 = true;
                 } else {
                     System.out.println(MSG_YIELD2);
                     Thread.yield();
