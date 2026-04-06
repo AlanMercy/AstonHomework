@@ -25,8 +25,8 @@ public class Animal {
         this.temper = builder.temper;
     }
 
-    public static Builder builder(String name, String species) {
-        return new Builder(name, species);
+    public static Builder builder() {
+        return new Builder();
     }
 
     public String getName() {
@@ -76,9 +76,8 @@ public class Animal {
     }
 
     public static class Builder {
-        private final String name;
-        private final String species;
-
+        private String name;
+        private String species;
         private int age;
         private double height;
         private double weight;
@@ -88,9 +87,17 @@ public class Animal {
         private String gender;
         private String temper;
 
-        private Builder(String name, String species) {
+        private Builder() {
+        }
+
+        public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder species(String species) {
             this.species = species;
+            return this;
         }
 
         public Builder age(int age) {
